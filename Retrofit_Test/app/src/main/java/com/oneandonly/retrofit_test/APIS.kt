@@ -20,6 +20,10 @@ interface APIS {
     @POST("/user/login")
     fun post_users(@FieldMap param: HashMap<String,String>): Call<PostResult>
 
+
+    @GET("user/information")
+    fun getRequest(@Header("Token-key") token: String?): Call<Any>
+
     companion object {
         private const val BASE_URL = "https://api.yukaigames.com/" // 주소
 

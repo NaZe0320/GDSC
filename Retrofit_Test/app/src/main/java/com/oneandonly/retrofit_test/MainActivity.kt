@@ -41,6 +41,28 @@ class MainActivity : AppCompatActivity() {
                         }
                     })
             }
+
+        }
+
+        binding.getbutton.setOnClickListener {
+
+            with(APIS) {
+                create().getRequest("sdfasdfassadfasdf").enqueue(object : Callback<Any> {
+                    override fun onResponse(call: Call<Any>, response: Response<Any>) {
+                        Log.d("log",response.toString())
+                        Log.d("log",response.body().toString())
+                        if(response.body().toString().isNotEmpty()) {
+                            binding.text.text = response.body().toString()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<Any>, t: Throwable) {
+                        Log.d("log",t.message.toString())
+                        Log.d("log","fail")
+
+                    }
+                })
+            }
         }
 
     }
