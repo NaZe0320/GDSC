@@ -102,6 +102,10 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
             override fun onFinish() {
                 currentExercisePosition++
+
+                exerciseList[currentExercisePosition].setIsSelected(true)
+                exerciseAdapter?.notifyDataSetChanged()
+
                 setupExerciseView()
             }
         }.start()
@@ -133,14 +137,22 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     }
 
     private fun setExerciseProgressBar() {
+
+        val time = 30
+
         binding.progressBarExercise.progress = exerciseProgress
-        exerciseTimer = object: CountDownTimer(30000,1000) {
+        exerciseTimer = object: CountDownTimer(time*1000L,1000) {
             override fun onTick(p0: Long) {
                 exerciseProgress ++
-                binding.progressBarExercise.progress = 30 - exerciseProgress
-                binding.tvTimerExercise.text = (30 - exerciseProgress).toString()
+                binding.progressBarExercise.progress = time - exerciseProgress
+                binding.tvTimerExercise.text = (time - exerciseProgress).toString()
             }
             override fun onFinish() {
+
+                exerciseList[currentExercisePosition].setIsSelected(false)
+                exerciseList[currentExercisePosition].setIsCompleted(true)
+                exerciseAdapter?.notifyDataSetChanged()
+
                 if (currentExercisePosition < exerciseList.size - 1) {
                     setupRestView()
                 } else {
