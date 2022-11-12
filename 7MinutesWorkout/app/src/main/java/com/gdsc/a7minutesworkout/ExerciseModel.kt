@@ -1,4 +1,4 @@
-package com.oneandonly.a7minutesworkout
+package com.gdsc.a7minutesworkout
 
 class ExerciseModel(
     private var id : Int,

@@ -1,6 +1,7 @@
-package com.oneandonly.a7minutesworkout
+package com.gdsc.a7minutesworkout
 
 import android.media.MediaPlayer
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -8,8 +9,9 @@ import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import com.oneandonly.a7minutesworkout.databinding.ActivityExerciseBinding
-import org.w3c.dom.Text
+import com.gdsc.a7minutesworkout.databinding.ActivityExerciseBinding
+import com.gdsc.a7minutesworkout.R
+import java.lang.Exception
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -52,6 +54,16 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     }
 
     private fun setupRestView() {
+
+        try {
+            val soundURI = Uri.parse("android.resource://com.gdsc.a7minutesworkout/"+ R.raw.press_start)
+            player = MediaPlayer.create(applicationContext, soundURI)
+            player.isLooping = false
+            player.start()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
         binding.flRestView.visibility = View.VISIBLE
         binding.tvTitle.visibility = View.VISIBLE
         binding.tvExerciseName.visibility = View.INVISIBLE
@@ -144,9 +156,13 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             tts?.stop()
             tts?.shutdown()
         }*/
-
         tts.stop()
         tts.shutdown()
+
+/*        if (player != null) {
+            player!!.stop()
+        }*/
+        player.stop()
 
     }
 
