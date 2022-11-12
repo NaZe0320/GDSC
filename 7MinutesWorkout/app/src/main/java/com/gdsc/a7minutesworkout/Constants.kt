@@ -1,4 +1,4 @@
-package com.oneandonly.a7minutesworkout
+package com.gdsc.a7minutesworkout
 
 object Constants {
 

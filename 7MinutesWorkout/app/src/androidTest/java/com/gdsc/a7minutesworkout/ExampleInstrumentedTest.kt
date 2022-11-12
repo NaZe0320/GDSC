@@ -1,4 +1,4 @@
-package com.oneandonly.a7minutesworkout
+package com.gdsc.a7minutesworkout
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

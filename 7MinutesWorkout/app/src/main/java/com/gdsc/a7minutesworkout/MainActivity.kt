@@ -1,10 +1,9 @@
-package com.oneandonly.a7minutesworkout
+package com.gdsc.a7minutesworkout
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import com.oneandonly.a7minutesworkout.databinding.ActivityMainBinding
+import com.gdsc.a7minutesworkout.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
