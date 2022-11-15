@@ -1,4 +1,4 @@
-package com.test.databindingrecyclerview
+package com.test.databindingrecyclerview.data
 
 data class Student (
     var name : String = "",

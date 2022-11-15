@@ -3,6 +3,7 @@ package com.test.databindingrecyclerview
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.test.databindingrecyclerview.data.Student
 import com.test.databindingrecyclerview.databinding.ListStudentItemBinding
 
 class StudentAdapter(private val studentList : ArrayList<Student>) : RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {

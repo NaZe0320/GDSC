@@ -6,7 +6,7 @@
     <data>
         <variable
             name="student"
-            type="com.test.databindingrecyclerview.Student" />
+            type="com.test.databindingrecyclerview.data.Student" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.test.databindingrecyclerview.data.Student
 import com.test.databindingrecyclerview.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id){
             binding.tvAddItem.id -> {
-                studentList.add(Student())
+                studentList.add(Student("a"))
                 Log.d("<PROCESS>", "$studentList")
                 studentAdapter.notifyItemInserted(studentList.size-1)
             }
