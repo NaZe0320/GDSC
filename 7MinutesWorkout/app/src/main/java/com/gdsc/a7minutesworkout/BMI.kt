@@ -6,6 +6,4 @@ enum class BMI(val Label: String, val Description: String) {
     OVERWEIGHT("과체중","Oops! You really need to take care of your yourself! Workout maybe!"),
     OBESITY("비만","Oops! You really need to take care of your yourself! Workout maybe!"),
     SEVERE_OBESITY("고도비만","OMG! You are in a very dangerous condition! Act now!")
-
-
 }
