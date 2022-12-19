@@ -218,9 +218,11 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         dialogBinding.tvNo.setOnClickListener {
             customDialog.dismiss()
         }
+        customDialog.show()
     }
 
     override fun onBackPressed() {
         customDialogForBackButton()
+        Log.d("BackPressed" ,"Pressed")
     }
 }

@@ -9,6 +9,7 @@
     </queries>
 
     <application
+        android:name=".WorkOutApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -21,20 +22,21 @@
         <activity
             android:name=".HistoryActivity"
             android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
         </activity>
+
         <activity
             android:name=".BMIActivity"
             android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
         </activity>
+
         <activity
             android:name=".ExerciseActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".FinishActivity"
+            android:exported="false"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -44,6 +46,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
