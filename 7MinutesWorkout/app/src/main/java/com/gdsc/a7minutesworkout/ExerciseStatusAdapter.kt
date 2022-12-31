@@ -11,9 +11,9 @@ class ExerciseStatusAdapter(private val items: ArrayList<ExerciseModel>):
     RecyclerView.Adapter<ExerciseStatusAdapter.ViewHolder>() {
 
     class ViewHolder(binding: ItemExerciseStatusBinding):
-            RecyclerView.ViewHolder(binding.root) {
-                val tvItem = binding.tvItem
-            }
+        RecyclerView.ViewHolder(binding.root) {
+            val tvItem = binding.tvItem
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(ItemExerciseStatusBinding.inflate(LayoutInflater.from(parent.context), parent, false))
